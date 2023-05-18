@@ -6,6 +6,8 @@ import PartnerRequest from "./components/PartnerRequest";
 import RiderApplication from "./components/RiderApplication";
 import FeedBack from "./components/FeedBacks";
 import AddMenu from "./components/AddMenu";
+import DeleteMenu from "./components/AddMenu/delete";
+import Partners from "./components/Partners/"
 
 function App() {
 	const user = localStorage.getItem("token");
@@ -20,7 +22,8 @@ function App() {
 			<Route path="/feedback" element={<FeedBack />} />
 			<Route path="/partner-request" element={<PartnerRequest />} />
 			<Route path="/add-menu" element={<AddMenu />} />
-
+			<Route path="/delete-menu" element={<DeleteMenu />} />
+			<Route path="/partners" element={<Partners />} />
 			<Route path="/" element={<Navigate to="/login" replace />} />
 		</Routes>
 	);

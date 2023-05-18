@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import React from 'react'
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 export default function AddMenu()  {
   const [name, setName] = useState("");
@@ -48,20 +49,26 @@ export default function AddMenu()  {
       setCategoryEmail("");
       setImageUrl("");
       setError(null);
+       toast.success('Product created successfully ✅');
     } catch (error) {
       console.error(error);
       setError("An error occurred while creating the product");
+       toast.error(' An error occurred while creating the product');
     }
   };
 
   return (
-  <div className="max-w-md mx-auto">
-    <h2 className="text-3xl font-bold mb-4">Add Product</h2>
+    <div className="m-10 ">
+<div className="flex justify-center items-center p-10" >
+  <div className="w-3/4 bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
+    <ToastContainer />
+    <h2 className="text-4xl font-bold mb-4 text-center text-orange-500 mb-5">Add Product</h2>
     {error && (
       <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md mb-4">
         {error}
       </div>
     )}
+    
     <form onSubmit={handleSubmit}>
       <div className="mb-4">
         <label htmlFor="name" className="block font-bold mb-2">
@@ -72,6 +79,7 @@ export default function AddMenu()  {
           id="name"
           className="w-full border border-gray-300 rounded-md py-2 px-3"
           value={name}
+        
           onChange={(e) => setName(e.target.value)}
           required
         />
@@ -155,13 +163,20 @@ export default function AddMenu()  {
       </div>
       <button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md"
+        className="bg-orange-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded-md w-full"
 >
 Add Product
 </button>
+ <div className="text-left mt-4">
+<Link to="/" className="px-4 py-2 rounded-md bg-black text-white hover:bg-white hover:text-black ml-auto">
+  Return Home
+</Link></div>
 </form>
-
+</div>
+ 
   </div>
+
+</div>
 )}
 
 

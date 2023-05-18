@@ -107,7 +107,7 @@ export default function PartnerRequest() {
   };
 
   return (
-    <>
+    <div className="p-5">
       <div className="text-center py-4 px-2 my-4">
         <h2 className="font-bold text-4xl text-gray-600">PartnerRequest</h2>
       </div>
@@ -116,11 +116,11 @@ export default function PartnerRequest() {
         {data.map((partner) => (
           <div key={partner._id} className={styles.grid_item}>
             <h3>{partner.restaurantName}</h3>
-            <p>{partner.location}</p>
-            <p>{partner.deliveryAreas}</p>
-            <p>{partner.email}</p>
-            <p>{partner.phone}</p>
-            <p>{partner.recentAchivements}</p>
+            <p> <span className="font-bold mb-10">Location:</span>  {partner.location}</p>
+            <p><span className="font-bold mb-10">Delivery areas:</span>  {partner.deliveryAreas}</p>
+            <p><span className="font-bold mb-10">Email :</span> {partner.email}</p>
+            <p><span className="font-bold mb-10">Phone:</span> {partner.phone}</p>
+            <p><span className="font-bold mb-10">Achivements:</span> {partner.recentAchivements}</p>
             {!addedPartners.includes(partner._id) && (
               <button
                 className="bg-orange-400 text-gray-50 rounded-md p-1 hover:bg-black hover:text-white"
@@ -134,7 +134,7 @@ export default function PartnerRequest() {
       </div>
 
       <ToastContainer />
-    </>
+    </div>
   );
 }
 
