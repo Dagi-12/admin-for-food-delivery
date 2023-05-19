@@ -4,7 +4,7 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
-
+import { FaHome } from "react-icons/fa";
 export default function AddMenu()  {
   const [name, setName] = useState("");
   const [adjective, setAdjective] = useState("");
@@ -167,10 +167,10 @@ export default function AddMenu()  {
 >
 Add Product
 </button>
- <div className="text-left mt-4">
-<Link to="/" className="px-4 py-2 rounded-md bg-black text-white hover:bg-white hover:text-black ml-auto">
-  Return Home
-</Link></div>
+<div className="text-left mt-4">
+            <Link to="/" className="px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-black hover:text-white ml-auto">
+              <FaHome className="inline-block mr-2" />Home</Link>
+          </div>
 </form>
 </div>
  

@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { FaRegUser } from "react-icons/fa";
 const Main = () => {
   const [data, setData] = useState([]);
 
@@ -15,7 +15,7 @@ const Main = () => {
     <div>
     <div className={styles.main_container}>
       <nav className={styles.navbar + " flex items-center justify-between shadow bg-gradient-to-r from-teal-400 to-white h-16 sticky top-0 z-10"}>
-  <h1 className="text-3xl font-bold text-white ml-5">Admin</h1>
+  <h1 className="text-3xl font-bold text-white ml-5"><FaRegUser className="inline-block mr-2 " />Admin</h1>
   <button className="px-4 py-2 rounded text-white bg-red-500 hover:bg-red-600 ml-auto mr-10 " onClick={handleLogout}>
     Logout
   </button>

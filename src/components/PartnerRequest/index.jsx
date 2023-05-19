@@ -62,7 +62,8 @@ import styles from "./styles.module.css";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+//FaSave
+import { FaDownload } from "react-icons/fa";
 export default function PartnerRequest() {
   const [data, setData] = useState([]);
 
@@ -126,7 +127,7 @@ export default function PartnerRequest() {
                 className="bg-orange-400 text-gray-50 rounded-md p-1 hover:bg-black hover:text-white"
                 onClick={() => addPartner(partner._id)}
               >
-                Add To Collection
+              <FaDownload className="inline-block mr-2" />  Add To Collection
               </button>
             )}
           </div>
