@@ -4,7 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
-
+import AdminFooter from "../Admin Footer";
 export default function DeleteMenu() {
   const [name, setName] = useState("");
   const [categoryName, setCategoryName] = useState("");
@@ -35,7 +35,8 @@ export default function DeleteMenu() {
   };
 
   return (
-    <div className="flex justify-center items-center p-10">
+    <div className="min-h-screen flex flex-col">
+    <div className="flex justify-center items-center p-10 flex-grow">
       <div className="w-3/4 bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
         <h2 className="text-4xl font-bold mb-4 text-center text-orange-500 mb-5">Delete Product</h2>
         {error && (
@@ -86,5 +87,7 @@ export default function DeleteMenu() {
         </form>
       </div>
     </div>
+    <AdminFooter/></div>
+    
   );
 }

@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import AdminFooter from "../Admin Footer";
 
 export default function FeedBack() {
   //fetching data from db
@@ -35,7 +36,8 @@ export default function FeedBack() {
           </div>
         ))}
       </div>
-      
+      <div className="mt-5">
+      <AdminFooter/></div>
     </>
   );
 }

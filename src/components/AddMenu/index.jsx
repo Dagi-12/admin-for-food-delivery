@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import AdminFooter from "../Admin Footer";
+
 export default function AddMenu()  {
   const [name, setName] = useState("");
   const [adjective, setAdjective] = useState("");
@@ -58,6 +60,7 @@ export default function AddMenu()  {
   };
 
   return (
+    <>
     <div className="m-10 ">
 <div className="flex justify-center items-center p-10" >
   <div className="w-3/4 bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
@@ -176,7 +179,7 @@ Add Product
  
   </div>
 
-</div>
+</div><AdminFooter/></>
 )}
 
 

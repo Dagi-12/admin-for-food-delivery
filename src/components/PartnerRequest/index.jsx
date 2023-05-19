@@ -62,8 +62,8 @@ import styles from "./styles.module.css";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//FaSave
 import { FaDownload } from "react-icons/fa";
+import AdminFooter from "../Admin Footer";
 export default function PartnerRequest() {
   const [data, setData] = useState([]);
 
@@ -108,6 +108,7 @@ export default function PartnerRequest() {
   };
 
   return (
+    <>
     <div className="p-5">
       <div className="text-center py-4 px-2 my-4">
         <h2 className="font-bold text-4xl text-gray-600">PartnerRequest</h2>
@@ -136,6 +137,8 @@ export default function PartnerRequest() {
 
       <ToastContainer />
     </div>
+     <div className="mt-5">
+      <AdminFooter/></div></>
   );
 }
 

@@ -8,6 +8,7 @@ import FeedBack from "./components/FeedBacks";
 import AddMenu from "./components/AddMenu";
 import DeleteMenu from "./components/AddMenu/delete";
 import Partners from "./components/Partners/"
+import AdminFooter from "./components/Admin Footer";
 
 function App() {
 	const user = localStorage.getItem("token");

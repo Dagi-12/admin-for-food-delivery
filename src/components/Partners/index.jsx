@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-
+import AdminFooter from "../Admin Footer";
 export default function Partners() {
      //fetching data from db
   const [data, setData] = useState([]);
@@ -15,6 +15,7 @@ export default function Partners() {
       });
   }, []);
   return (
+    <>
     <div>
         
       <div className="text-center py-4 px-2 my-4">
@@ -40,5 +41,7 @@ export default function Partners() {
       </div>
 
     </div>
+     <div className="mt-5">
+      <AdminFooter/></div></>
   )
 }

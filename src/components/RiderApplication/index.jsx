@@ -1,6 +1,7 @@
 
 import React, { useEffect } from "react";
 import { useState } from "react";
+import AdminFooter from "../Admin Footer";
 export default function RiderApplication() {
   //fetching data from db
   const [data, setData] = useState([]);
@@ -14,7 +15,9 @@ export default function RiderApplication() {
         setData(data.data);
       });
   }, []);
-  return (<div className=" p-5">
+  return (
+  <>
+  <div className=" p-5">
       
       <div className="text-center py-4 px-2 my-4">
         <h2 className="font-bold text-4xl text-red-500 ">Rider Applications</h2>
@@ -37,5 +40,7 @@ export default function RiderApplication() {
         ))}
       </div>
     </div>
+     <div className="mt-5">
+      <AdminFooter/></div></>
   )
 }
