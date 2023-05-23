@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { FaEdit } from "react-icons/fa";
 
 const Login = () => {
 	const [data, setData] = useState({ email: "", password: "" });
@@ -68,7 +69,7 @@ const Login = () => {
 					<h1 className="font-bold">New Here?</h1>
 					<Link to="/signup">
 						<button type="button" className={styles.white_btn}>
-							Sign Up
+							 <FaEdit className="inline-block mr-2 " />Sign Up
 						</button>
 					</Link>
 				</div>

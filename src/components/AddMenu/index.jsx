@@ -60,10 +60,17 @@ export default function AddMenu()  {
   };
 
   return (
-    <>
+    <> <div className="bg-gray-800 py-6">
+  <h2 className="text-4xl font-bold text-white text-center py-2 shadow-lg">
+    Adding Products To the Menu Page
+  </h2>
+</div>
     <div className="m-10 ">
+ 
+
+
 <div className="flex justify-center items-center p-10" >
-  <div className="w-3/4 bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
+  <div className="w-full  bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
     <ToastContainer />
     <h2 className="text-4xl font-bold mb-4 text-center text-orange-500 mb-5">Add Product</h2>
     {error && (

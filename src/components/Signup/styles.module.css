@@ -8,7 +8,8 @@
 }
 
 .signup_form_container {
-    width: 900px;
+    width: 90%;
+    max-width: 900px;
     height: 500px;
     display: flex;
     border-radius: 10px;
@@ -59,7 +60,8 @@
 .input {
     outline: none;
     border: none;
-    width: 370px;
+    width: 100%;
+    max-width: 370px;
     padding: 15px;
     border-radius: 10px;
     background-color: #edf5f3;
@@ -68,7 +70,8 @@
 }
 
 .error_msg {
-    width: 370px;
+    width: 100%;
+    max-width: 370px;
     padding: 15px;
     margin: 5px 0;
     font-size: 14px;
@@ -95,4 +98,25 @@
     background-color: #faa23d;
     color: white;
     margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .signup_form_container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left,
+    .right {
+        flex: 1;
+        border-radius: 10px;
+    }
+
+    .right {
+        margin-top: 20px;
+    }
+
+    .left h1 {
+        font-size: 30px;
+    }
 }

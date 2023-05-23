@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import { FaSignInAlt } from "react-icons/fa";
+//FaSignInAlt
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -46,7 +48,7 @@ const Signup = () => {
           <h1 className="font-bold">Welcome Back</h1>
           <Link to="/login">
             <button type="button" className={styles.white_btn}>
-              Sign in
+             <FaSignInAlt className="inline-block mr-2 " /> Sign in
             </button>
           </Link>
         </div>

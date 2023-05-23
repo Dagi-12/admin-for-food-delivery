@@ -69,14 +69,20 @@ const Main = () => {
         <img src={require('../../assets/images/customer-feed.jpg')} alt="Photo 3" className="w-full h-full object-cover" />
       </div>
     </div>
-    <div className="mb-10 ">
-      <h2 className="p-5 text-center font-bold text-2xl">List Of Currently Partnered Entities </h2>
-
-<Link to="/partners" className="block px-4 py-2 rounded-md bg-teal-400 text-white hover:bg-teal-300  hover:text-black text-center w-full h-20 flex justify-center items-center text-xl font-semibold-b">
-  PARTNERS
-</Link>
-
+  <div className="mb-10">
+  <h2 className="p-5 text-center font-bold text-2xl">List Of Currently Partnered Entities</h2>
+  <Link
+    to="/partners"
+    className="block px-4 py-2 rounded-md bg-teal-400 text-white hover:bg-teal-300 hover:text-black text-center w-full h-20 flex justify-center items-center text-xl  transition duration-300 ease-in-out transform hover:scale-110 font-bold"
+    style={{
+      boxShadow: '0px 15px 22px rgba(0, 0, 0, 0.4)',
+      backgroundImage: 'linear-gradient(to right, #f3a683, #ff682b)',
+    }}
+  >
+    PARTNERS
+  </Link>
 </div>
+
    <AdminFooter/>
     </div>
   );
