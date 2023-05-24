@@ -62,18 +62,26 @@ const Signup = () => {
               name="firstName"
               onChange={handleChange}
               value={data.firstName}
+               pattern="[A-Za-z]+"
               required
               className={styles.input}
             />
+            {data.firstName && !data.firstName.match(/^[A-Za-z]+$/) && (
+  <p className="text-red-500 font-semibold" >Invalid name</p>
+)}
             <input
               type="text"
               placeholder="Last Name"
               name="lastName"
               onChange={handleChange}
               value={data.lastName}
+                pattern="[A-Za-z]+"
               required
               className={styles.input}
             />
+             {data.lastName && !data.lastName.match(/^[A-Za-z]+$/) && (
+  <p className="text-red-500 font-semibold" >Invalid name</p>
+)}
             <input
               type="email"
               placeholder="Email"
