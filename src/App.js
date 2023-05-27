@@ -7,7 +7,8 @@ import RiderApplication from "./components/RiderApplication";
 import FeedBack from "./components/FeedBacks";
 import AddMenu from "./components/AddMenu";
 import DeleteMenu from "./components/AddMenu/delete";
-import Partners from "./components/Partners/"
+import Partners from "./components/Partners/";
+import Riders from "./components/Riders";
 import AdminFooter from "./components/Admin Footer";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
 			<Route path="/add-menu" element={<AddMenu />} />
 			<Route path="/delete-menu" element={<DeleteMenu />} />
 			<Route path="/partners" element={<Partners />} />
+			<Route path="/riders" element={<Riders />} />
 			<Route path="/" element={<Navigate to="/login" replace />} />
 		</Routes>
 	);

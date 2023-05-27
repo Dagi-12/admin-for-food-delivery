@@ -39,13 +39,13 @@ const Main = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
         <div className={`bg-gradient-to-br from-teal-300 to-yellow-50 rounded-lg shadow-lg p-4`}>
-          <h2 className="text-lg font-bold mb-2">Partner Request</h2>
+          <h2 className="text-lg font-bold mb-2">Partner Requests</h2>
           <a href="/partner-request" className="px-4 py-2 rounded text-white bg-green-500 hover:bg-green-600">
             Show Requests
           </a>
         </div>
         <div className={`bg-gradient-to-br from-teal-300 to-yellow-50 rounded-lg shadow-lg p-4`}>
-          <h2 className="text-lg font-bold mb-2">Rider Application</h2>
+          <h2 className="text-lg font-bold mb-2">Rider Applications</h2>
           <a href="/rider-application" className="px-4 py-2 rounded text-white bg-green-500 hover:bg-green-600">
             Show Applications
           </a>
@@ -80,6 +80,19 @@ const Main = () => {
     }}
   >
     PARTNERS
+  </Link>
+</div>
+<div className="mb-10">
+  <h2 className="p-5 text-center font-bold text-2xl">List Of Valid Riders Information</h2>
+  <Link
+    to="/riders"
+    className="block px-4 py-2 rounded-md bg-teal-400 text-white hover:bg-teal-300 hover:text-black text-center w-full h-20 flex justify-center items-center text-xl  transition duration-300 ease-in-out transform hover:scale-110 font-bold"
+    style={{
+      boxShadow: '0px 15px 22px rgba(0, 0, 0, 0.4)',
+      backgroundImage: 'linear-gradient(to right, #f3a683, #ff682b)',
+    }}
+  >
+    RIDERS
   </Link>
 </div>
 

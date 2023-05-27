@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AdminFooter from "../Admin Footer";
+import { FaTrash } from "react-icons/fa";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Partners() {
   const [data, setData] = useState([]);
@@ -23,8 +26,10 @@ export default function Partners() {
       await axios.delete(`http://localhost:4000/api/restaurants/${id}`);
       // Refresh the data after successful deletion
       fetchData();
+      toast.success("Restaurant Deleted");
     } catch (error) {
       console.error(error);
+       toast.error("Error occurred");
     }
   };
 
@@ -68,7 +73,7 @@ export default function Partners() {
                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
                 onClick={() => handleDelete(restaurant._id)}
               >
-                Delete
+               <FaTrash className="inline-block mr-2" />  Delete
               </button>
             </div>
           ))}

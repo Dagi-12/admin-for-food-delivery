@@ -47,8 +47,8 @@ export default function AddMenu()  {
       setAdjective("");
       setDescription("");
       setPrice("");
-      setCategoryName("");
-      setCategoryEmail("");
+      // setCategoryName("");
+      // setCategoryEmail("");
       setImageUrl("");
       setError(null);
        toast.success('Product created successfully ✅');

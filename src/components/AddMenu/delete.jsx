@@ -24,7 +24,7 @@ export default function DeleteMenu() {
       console.log(response.data); // Optional: Log the response from the server
       // Reset form fields
       setName("");
-      setCategoryName("");
+      // setCategoryName("");
       setError(null);
       toast.success('Product Deleted successfully ✅');
     } catch (error) {
