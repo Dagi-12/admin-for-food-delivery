@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import AdminFooter from "../Admin Footer";
-import { FaTrash } from "react-icons/fa";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import AdminFooter from '../Admin Footer';
+import { FaTrash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Partners() {
   const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ export default function Partners() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/restaurants");
+      const response = await axios.get('http://localhost:4000/api/restaurants');
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -26,57 +26,53 @@ export default function Partners() {
       await axios.delete(`http://localhost:4000/api/restaurants/${id}`);
       // Refresh the data after successful deletion
       fetchData();
-      toast.success("Restaurant Deleted");
+      toast.success('Restaurant Deleted');
     } catch (error) {
       console.error(error);
-       toast.error("Error occurred");
+      toast.error('Error occurred');
     }
   };
 
   return (
     <>
       <div>
-        <div className="text-center py-4 px-2 my-4">
-          <h2 className="font-bold text-4xl text-red-500 mb-5 mt-5">
+        <div className="text-center py-4 px-2 my-4 ">
+          <h2 className="font-bold text-4xl text-white mb-5 mt-5 bg-gray-400 rounded-lg p-2">
             LIST OF CURRENTLY WORKING WITH PARTNERED ENTITIES
           </h2>
           <div className="h-1 w-full bg-red-600 mx-auto mb-5"></div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {data.map((restaurant) => (
-            <div
-              key={restaurant._id}
-              className="border-2 border-gray-300 rounded-lg p-4 shadow-md shadow-teal-300 mb-5 ml-5 mr-5"
-            >
-              <h3 className="bg-gradient-to-br from-emerald-500 to-yellow-200 rounded-lg shadow-lg text-white py-2 px-4 rounded-md">
-                {restaurant.restaurantName}
-              </h3>
-              <p className="mt-4">
-                <span className="font-bold mb-10">Name:</span>{" "}
-                {restaurant.restaurantName}
-              </p>
-              <p className="mt-4">
-                <span className="font-bold mb-10">Location:</span>{" "}
-                {restaurant.location}
-              </p>
-              <p className="mt-4">
-                <span className="font-bold mb-10">Email:</span>{" "}
-                {restaurant.email}
-              </p>
-              <p className="mt-4">
-                <span className="font-bold mb-10">Phone:</span>{" "}
-                {restaurant.phone}
-              </p>
-
-              <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4"
-                onClick={() => handleDelete(restaurant._id)}
-              >
-               <FaTrash className="inline-block mr-2" />  Delete
-              </button>
-            </div>
-          ))}
+        <div className="overflow-x-auto ml-2 mr-2">
+          <table className="min-w-full bg-white border border-gray-300">
+            <thead>
+              <tr>
+                <th className="py-2 px-4 border-b bg-teal-300 text-white">Name</th>
+                <th className="py-2 px-4 border-b bg-teal-300 text-white">Location</th>
+                <th className="py-2 px-4 border-b bg-teal-300 text-white">Email</th>
+                <th className="py-2 px-4 border-b bg-teal-300 text-white">Phone</th>
+                <th className="py-2 px-4 border-b bg-teal-300 text-white">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((restaurant, index) => (
+                <tr key={restaurant._id} className={index % 2 === 0 ? 'bg-teal-100' : 'bg-white'}>
+                  <td className="py-2 px-4 border-b">{restaurant.restaurantName}</td>
+                  <td className="py-2 px-4 border-b">{restaurant.location}</td>
+                  <td className="py-2 px-4 border-b">{restaurant.email}</td>
+                  <td className="py-2 px-4 border-b">{restaurant.phone}</td>
+                  <td className="py-2 px-4 border-b">
+                    <button
+                      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      onClick={() => handleDelete(restaurant._id)}
+                    >
+                      <FaTrash className="inline-block mr-2" /> Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
       <div className="mt-5">

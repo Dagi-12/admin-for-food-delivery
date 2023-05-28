@@ -31,12 +31,12 @@ const Riders = () => {
   return (
     <>
      <div className="text-center py-4 px-2 my-4">
-          <h2 className="font-bold text-4xl text-black mb-5 mt-5">
+          <h2 className="font-bold text-4xl text-white mb-5 mt-5 bg-gray-400 rounded-lg p-2">
             LIST OF VALID RIDERS
           </h2>
           <div className="h-1 w-full bg-teal-600 mx-auto mb-5"></div>
         </div>
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto ml-2 mr-2">
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>

@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaRegUser,FaPlusCircle,FaMinusCircle,FaSignOutAlt} from "react-icons/fa";
+import { FaRegUser,FaPlusCircle,FaMinusCircle,FaSignOutAlt,FaHotel,FaMotorcycle} from "react-icons/fa";
 
 import AdminFooter from "../Admin Footer";
 const Main = () => {
@@ -33,7 +33,7 @@ const Main = () => {
   </a >
   <a href="/delete-menu">
   <button className="absolute top-1/2 left-3/4 transform -translate-x-1/2 -translate-y-1/2 px-8 py-3 rounded-lg text-white bg-red-500 hover:bg-red-600 text-lg font-medium">
-   <FaMinusCircle className="inline-block mr-2 " /> Delete Menu
+   <FaMinusCircle className="inline-block mr-2 " />Delete Menu
   </button></a>
 </div>
 
@@ -79,7 +79,7 @@ const Main = () => {
       backgroundImage: 'linear-gradient(to right, #f3a683, #ff682b)',
     }}
   >
-    PARTNERS
+    <FaHotel className="inline-block mr-2 text-3xl " /> PARTNERS
   </Link>
 </div>
 <div className="mb-10">
@@ -92,7 +92,7 @@ const Main = () => {
       backgroundImage: 'linear-gradient(to right, #f3a683, #ff682b)',
     }}
   >
-    RIDERS
+   <FaMotorcycle className="inline-block mr-2 text-5xl " /> RIDERS
   </Link>
 </div>
 
