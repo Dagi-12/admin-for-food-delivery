@@ -22,7 +22,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const secretKey = "AD12"; // Replace with your actual secret key
+    const secretKey = "AD12"; // Replace with any secret key we want
 
     if (data.secretKey !== secretKey) {
       setError("Invalid secret key. Admin registration failed.");
