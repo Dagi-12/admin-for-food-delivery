@@ -2,8 +2,9 @@ import styles from "./styles.module.css";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaDownload, FaTrash } from "react-icons/fa";
+import { FaDownload, FaTrash,FaArrowAltCircleLeft } from "react-icons/fa";
 import AdminFooter from "../Admin Footer";
+import { Link } from "react-router-dom";
 
 export default function PartnerRequest() {
   const [data, setData] = useState([]);
@@ -70,7 +71,10 @@ export default function PartnerRequest() {
     <>
       <div className="p-5">
         <div className="text-center py-4 px-2 my-4">
-          <h2 className="font-bold text-4xl text-gray-600">PartnerRequest</h2>
+          <h2 className="font-bold text-4xl text-gray-600"><Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              
+        </Link>PartnerRequest</h2>
           <div className="h-1 w-full bg-teal-500 mx-auto mt-5 mb-5"></div>
         </div>
 

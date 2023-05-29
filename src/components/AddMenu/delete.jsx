@@ -3,8 +3,9 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaArrowAltCircleLeft} from "react-icons/fa";
 import AdminFooter from "../Admin Footer";
+
 export default function DeleteMenu() {
   const [name, setName] = useState("");
   const [categoryName, setCategoryName] = useState("");
@@ -35,64 +36,66 @@ export default function DeleteMenu() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-       <div className="bg-gray-800 py-6">
-  <h2 className="text-4xl font-bold text-white text-center py-2 shadow-lg">
-    Deleting Products From the Menu Page
-  </h2>
-</div>
-    <div className="flex justify-center items-center p-10 flex-grow">
-      <div className="w-3/4 bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
-        <h2 className="text-4xl font-bold mb-4 text-center text-orange-500 mb-5">Delete Product</h2>
-        {error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md mb-4">
-            {error}
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block font-bold mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              className="w-full border border-gray-300 rounded-md py-2 px-3"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="categoryName" className="block font-bold mb-2">
-              Category Name
-            </label>
-            <input
-              type="text"
-              id="categoryName"
-              className="w-full border border-gray-300 rounded-md py-2 px-3"
-              value={categoryName}
-              onChange={(e) => setCategoryName(e.target.value)}
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-md w-full"
-          >
-            Delete Product
-          </button>
-          
-          <div className="text-left mt-4">
-            <Link to="/" className="px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-black hover:text-white ml-auto">
-              <FaHome className="inline-block mr-2" />Home</Link>
-          </div>
-        </form>
+    <>
+      <div className="bg-gray-800 py-6">
+        <h2 className="text-4xl font-bold text-white text-center py-2 shadow-lg">
+          Deleting Products From the Menu Page
+        </h2>
       </div>
-    </div>
-    <AdminFooter/></div>
-    
+      <div className="min-h-screen flex flex-col sm:items-center justify-center sm:p-2">
+        <div className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto ">
+          <div className="bg-transparent shadow-xl shadow-red-500 rounded-xl p-6">
+            <h2 className="text-4xl font-bold mb-4 text-center text-orange-500">
+              <Link to="/" className=" ">
+                <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              </Link>
+              Delete Product
+            </h2>
+            {error && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md mb-4">
+                {error}
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label htmlFor="name" className="block font-bold mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full border border-gray-300 rounded-md py-2 px-3"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="categoryName" className="block font-bold mb-2">
+                  Category Name
+                </label>
+                <input
+                  type="text"
+                  id="categoryName"
+                  className="w-full border border-gray-300 rounded-md py-2 px-3"
+                  value={categoryName}
+                  onChange={(e) => setCategoryName(e.target.value)}
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="bg-red-400 hover:bg-red-500 text-white font-bold py-2 px-4 rounded-md w-full"
+              >
+                Delete Product
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <AdminFooter />
+    </>
   );
 }

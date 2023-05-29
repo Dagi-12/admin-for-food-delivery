@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import AdminFooter from "../Admin Footer";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash ,FaArrowAltCircleLeft} from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function FeedBack() {
   const [data, setData] = useState([]);
 
@@ -37,7 +38,10 @@ export default function FeedBack() {
   return (
     <>
       <div className="text-center py-4 px-2 my-4">
-        <h2 className="font-bold text-4xl text-green-500">FeedBacks</h2>
+        <h2 className="font-bold text-4xl text-green-500"><Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              
+        </Link>FeedBacks</h2>
         <div className="h-1 w-full bg-teal-500 mx-auto mt-5 mb-5"></div>
 
       </div>
@@ -61,9 +65,8 @@ export default function FeedBack() {
           </div>
         ))}
       </div>
-      <div className="mt-5 pb-0">
-        <AdminFooter />
-      </div>
+      <div className="position bottom-0 left-0 w-full  text-center mt-20">
+    <AdminFooter /></div>
     </>
   );
 }

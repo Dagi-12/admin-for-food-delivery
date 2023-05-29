@@ -9,6 +9,7 @@ import AddMenu from "./components/AddMenu";
 import DeleteMenu from "./components/AddMenu/delete";
 import Partners from "./components/Partners/";
 import Riders from "./components/Riders";
+import Orders from "./components/Orders";
 import AdminFooter from "./components/Admin Footer";
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
 			<Route path="/delete-menu" element={<DeleteMenu />} />
 			<Route path="/partners" element={<Partners />} />
 			<Route path="/riders" element={<Riders />} />
+			<Route path="/orders" element={<Orders />} />
+			
 			<Route path="/" element={<Navigate to="/login" replace />} />
 		</Routes>
 	);

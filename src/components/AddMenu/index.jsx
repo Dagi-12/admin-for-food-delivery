@@ -4,7 +4,7 @@ import React from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 import AdminFooter from "../Admin Footer";
 
 export default function AddMenu()  {
@@ -65,14 +65,18 @@ export default function AddMenu()  {
     Adding Products To the Menu Page
   </h2>
 </div>
-    <div className="m-10 ">
+    <div className=" ">
  
 
 
 <div className="flex justify-center items-center p-10" >
-  <div className="w-full  bg-transparent shadow-lg rounded-lg p-6" style={{ boxShadow: "0 0 10px #14CAD3" }}>
+  <div className="w-full sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto bg-transparent shadow-xl rounded-xl p-6 md:p-8 lg:p-10 xl:p-12 shadow-green-500" >
+
     <ToastContainer />
-    <h2 className="text-4xl font-bold mb-4 text-center text-orange-500 mb-5">Add Product</h2>
+    <h2 className="text-3xl font-bold mb-4 text-center text-orange-500 mb-5"> <Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-2 ml-2 text-4xl hover:text-black" />
+              
+        </Link> Add Product</h2>
     {error && (
       <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-md mb-4">
         {error}
@@ -177,10 +181,7 @@ export default function AddMenu()  {
 >
 Add Product
 </button>
-<div className="text-left mt-4">
-            <Link to="/" className="px-4 py-2 rounded-md bg-gray-700 text-white hover:bg-black hover:text-white ml-auto">
-              <FaHome className="inline-block mr-2" />Home</Link>
-          </div>
+
 </form>
 </div>
  

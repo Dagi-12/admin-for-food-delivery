@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaRegUser,FaPlusCircle,FaMinusCircle,FaSignOutAlt,FaHotel,FaMotorcycle} from "react-icons/fa";
+import { FaRegUser,FaPlusCircle,FaMinusCircle,FaSignOutAlt,FaHotel,FaMotorcycle,FaBars} from "react-icons/fa";
 
 import AdminFooter from "../Admin Footer";
 const Main = () => {
@@ -93,6 +93,20 @@ const Main = () => {
     }}
   >
    <FaMotorcycle className="inline-block mr-2 text-5xl " /> RIDERS
+  </Link>
+</div>
+
+<div className="mb-10">
+  <h2 className="p-5 text-center font-bold text-2xl">Order History</h2>
+  <Link
+    to="/orders"
+    className="block px-4 py-2 rounded-md bg-teal-400 text-white hover:bg-teal-300 hover:text-black text-center w-full h-20 flex justify-center items-center text-xl  transition duration-300 ease-in-out transform hover:scale-110 font-bold"
+    style={{
+      boxShadow: '0px 15px 22px rgba(0, 0, 0, 0.4)',
+      backgroundImage: 'linear-gradient(to right, #f3a683, #ff682b)',
+    }}
+  >
+   <FaBars className="inline-block mr-2 text-3xl " /> ORDERS
   </Link>
 </div>
 

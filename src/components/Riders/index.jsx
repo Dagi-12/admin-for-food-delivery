@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import AdminFooter from "../Admin Footer";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaTrash } from "react-icons/fa";
+import { FaTrash ,FaArrowAltCircleLeft} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const Riders = () => {
   const [validRiders, setValidRiders] = useState([]);
 
@@ -32,7 +33,10 @@ const Riders = () => {
     <>
      <div className="text-center py-4 px-2 my-4">
           <h2 className="font-bold text-4xl text-white mb-5 mt-5 bg-gray-400 rounded-lg p-2">
-            LIST OF VALID RIDERS
+             <Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              
+        </Link>LIST OF VALID RIDERS
           </h2>
           <div className="h-1 w-full bg-teal-600 mx-auto mb-5"></div>
         </div>

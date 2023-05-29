@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash,FaArrowAltCircleLeft } from "react-icons/fa";
 import AdminFooter from "../Admin Footer";
-
+import { Link } from "react-router-dom";
 export default function RiderApplication() {
   const [data, setData] = useState([]);
 
@@ -65,9 +65,12 @@ export default function RiderApplication() {
 
   return (
     <>
-      <div className="p-5">
+      <div className="p-2">
         <div className="text-center py-4 px-2 my-4">
-          <h2 className="font-bold text-4xl text-red-500 ">Rider Applications</h2>
+          <h2 className="font-bold text-4xl text-red-500 "><Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              
+        </Link>Rider Applications</h2>
           <div className="h-1 w-full bg-gray-400 mx-auto mt-5 mb-5"></div>
         </div>
 

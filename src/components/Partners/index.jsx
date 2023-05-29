@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AdminFooter from '../Admin Footer';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash,FaArrowAltCircleLeft } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Link } from 'react-router-dom';
 export default function Partners() {
   const [data, setData] = useState([]);
 
@@ -38,7 +38,10 @@ export default function Partners() {
       <div>
         <div className="text-center py-4 px-2 my-4 ">
           <h2 className="font-bold text-4xl text-white mb-5 mt-5 bg-gray-400 rounded-lg p-2">
-            LIST OF CURRENTLY WORKING WITH PARTNERED ENTITIES
+           <Link to="/" className=" ">
+              <FaArrowAltCircleLeft className="inline-block mr-5 ml-5 text-4xl hover:text-black" />
+              
+        </Link>  LIST OF CURRENTLY WORKING WITH PARTNERED ENTITIES
           </h2>
           <div className="h-1 w-full bg-red-600 mx-auto mb-5"></div>
         </div>
@@ -75,9 +78,8 @@ export default function Partners() {
           </table>
         </div>
       </div>
-      <div className="mt-5">
-        <AdminFooter />
-      </div>
+     <div className="position bottom-0 left-0 w-full  text-center mt-20">
+    <AdminFooter /></div>
     </>
   );
 }
