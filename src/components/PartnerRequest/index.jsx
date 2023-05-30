@@ -66,6 +66,27 @@ export default function PartnerRequest() {
       toast.error("Error occurred");
     }
   };
+  //sending email
+   const handlePartnersContact = (email) => {
+    const emailSubject = 'Regarding your Application To work With Our መሶብ Delivery ';
+    const emailBody = 'Dear Partners , we have reviewed your Application and ';
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+    const emailWindow= window.open(mailtoLink, '_blank');
+
+    
+    // Check if the email window is opened
+    if (emailWindow) {
+      // Display a success toast message
+      toast.success('Email sent successfully!');
+    } else {
+      // Display an error toast message if the email window fails to open
+      toast.error('Failed to open email window!');
+    }
+
+  };
+  //
 
   return (
     <>
@@ -88,8 +109,11 @@ export default function PartnerRequest() {
               <p>
                 <span className="font-bold mb-10">Delivery areas:</span> {partner.deliveryAreas}
               </p>
+              {/* <h3 className="bg-emerald-400 text-white py-2 px-4 rounded-md hover:text-black hover:cursor-pointer" onClick={() => handleContactUs(feedback.email)}>
+  {feedback.email}
+</h3> */}
               <p>
-                <span className="font-bold mb-10">Email :</span> {partner.email}
+                <span className="font-bold mb-10">Email :</span> <span className=" hover:text-orange-600 hover:cursor-pointer" onClick={() => handlePartnersContact(partner.email)}>{partner.email}</span>
               </p>
               <p>
                 <span className="font-bold mb-10">Phone:</span> {partner.phone}

@@ -34,6 +34,27 @@ export default function FeedBack() {
       toast.error("Error occurred");
     }
   };
+  //email
+  const handleContactUs = (email) => {
+    const emailSubject = 'Regarding your feedBack on our መሶብ Delivery ';
+    const emailBody = 'Dear Customer, we have reviewed your feedback and ';
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+    const emailWindow= window.open(mailtoLink, '_blank');
+
+    
+    // Check if the email window is opened
+    if (emailWindow) {
+      // Display a success toast message
+      toast.success('Email sent successfully!');
+    } else {
+      // Display an error toast message if the email window fails to open
+      toast.error('Failed to open email window!');
+    }
+
+  };
+  //
 
   return (
     <>
@@ -52,9 +73,10 @@ export default function FeedBack() {
             key={feedback._id}
             className="border-2 border-gray-300 rounded-lg p-4 shadow-md shadow-sky-500"
           >
-            <h3 className="bg-emerald-400 text-white py-2 px-4 rounded-md">
-              {feedback.email}
-            </h3>
+           <h3 className="bg-emerald-400 text-white py-2 px-4 rounded-md hover:text-black hover:cursor-pointer" onClick={() => handleContactUs(feedback.email)}>
+  {feedback.email}
+</h3>
+
             <p className="mt-4">{feedback.feedback}</p>
             <button
               className="bg-red-500 text-white py-1 px-3 rounded-md mt-4"
