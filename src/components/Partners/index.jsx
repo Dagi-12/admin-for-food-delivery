@@ -6,6 +6,24 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
 export default function Partners() {
+
+   //1
+   const [validRiders, setValidRiders] = useState([]);
+
+useEffect(() => {
+  fetch('http://localhost:4000/api/validriders')
+    .then((response) => response.json())
+    .then((data) => {
+      const formattedData = data.map(({ firstName, lastName, email, phone, vehicleType }) => (
+        [firstName, lastName, email, phone, vehicleType,]
+      ));
+      setValidRiders(formattedData);
+    })
+    .catch((error) => console.error(error));
+}, []);
+const formattedValidRiders = validRiders.map((rider) => `➡️${rider.join(", ")}\n`);
+
+  //1
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -33,6 +51,27 @@ export default function Partners() {
     }
   };
 
+  //sending email
+   const handlePartnersContact = (email) => {
+    const emailSubject = 'Regarding Providing You With Delivey Persons  ';
+    const emailBody = `Dear Partner , Here is a list of our valid delivery personnel with their respective contact addresses in the form of firstname, lastname, email, phone, and vehicle type:- \n${formattedValidRiders} So any time there is an order you can contact them and they will deliver the items you are going to provided them. Thanks for working with us.` ;
+    const encodedSubject = encodeURIComponent(emailSubject);
+    const encodedBody = encodeURIComponent(emailBody);
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+    const emailWindow= window.open(mailtoLink, '_blank');
+
+    
+    // Check if the email window is opened
+    if (emailWindow) {
+      // Display a success toast message
+      toast.success('Email sent successfully!');
+    } else {
+      // Display an error toast message if the email window fails to open
+      toast.error('Failed to open email window!');
+    }
+
+  };
+  //
   return (
     <>
       <div>
@@ -62,7 +101,12 @@ export default function Partners() {
                 <tr key={restaurant._id} className={index % 2 === 0 ? 'bg-teal-100' : 'bg-white'}>
                   <td className="py-2 px-4 border-b">{restaurant.restaurantName}</td>
                   <td className="py-2 px-4 border-b">{restaurant.location}</td>
-                  <td className="py-2 px-4 border-b">{restaurant.email}</td>
+                  {/*  <p>
+                <span className="font-bold mb-10">Email :</span> <span className=" hover:text-orange-600 
+                hover:cursor-pointer" onClick={() => handlePartnersContact(partner.email)}>{partner.email}</span>
+              </p> */}
+                  <td className="py-2 px-4 border-b hover:text-orange-600 
+                hover:cursor-pointer" onClick={() => handlePartnersContact(restaurant.email)}>{restaurant.email}</td>
                   <td className="py-2 px-4 border-b">{restaurant.phone}</td>
                   <td className="py-2 px-4 border-b">
                     <button

@@ -9,6 +9,8 @@ import { Link } from "react-router-dom";
 export default function PartnerRequest() {
   const [data, setData] = useState([]);
 
+
+
   useEffect(() => {
     fetch("http://localhost:4000/getAllPartners", {
       method: "GET",
@@ -69,7 +71,7 @@ export default function PartnerRequest() {
   //sending email
    const handlePartnersContact = (email) => {
     const emailSubject = 'Regarding your Application To work With Our መሶብ Delivery ';
-    const emailBody = 'Dear Partners , we have reviewed your Application and ';
+    const emailBody = 'Dear Partners , we have reviewed your Application and'  ;
     const encodedSubject = encodeURIComponent(emailSubject);
     const encodedBody = encodeURIComponent(emailBody);
     const mailtoLink = `https://mail.google.com/mail/?view=cm&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
