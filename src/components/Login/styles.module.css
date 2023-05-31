@@ -116,3 +116,18 @@
         margin-top: 20px;
     }
 }
+.password_container {
+    position:relative;
+}
+
+.password_toggle_btn {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    color: #999;
+}

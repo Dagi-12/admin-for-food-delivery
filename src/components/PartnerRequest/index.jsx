@@ -70,7 +70,7 @@ export default function PartnerRequest() {
   };
   //sending email
    const handlePartnersContact = (email) => {
-    const emailSubject = 'Regarding your Application To work With Our መሶብ Delivery ';
+    const emailSubject = 'Regarding your Application To work With መሶብ Delivery ';
     const emailBody = 'Dear Partners , we have reviewed your Application and'  ;
     const encodedSubject = encodeURIComponent(emailSubject);
     const encodedBody = encodeURIComponent(emailBody);
@@ -132,7 +132,7 @@ export default function PartnerRequest() {
                 </button>
               )}
               <button
-                className="bg-red-500 text-white py-1 px-3 rounded-md mt-2 ml-5"
+                className="bg-red-500 text-white py-1 px-3 rounded-md mt-2 ml-5 hover:bg-red-700"
                 onClick={() => deletePartner(partner._id)}
               >
                 <FaTrash className="inline-block mr-2" /> Delete

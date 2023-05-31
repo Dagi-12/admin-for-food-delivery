@@ -53,7 +53,7 @@ const formattedValidRiders = validRiders.map((rider) => `➡️${rider.join(", "
 
   //sending email
    const handlePartnersContact = (email) => {
-    const emailSubject = 'Regarding Providing You With Delivey Persons  ';
+    const emailSubject = 'Providing You With Delivey Persons from መሶብ delivery ';
     const emailBody = `Dear Partner , Here is a list of our valid delivery personnel with their respective contact addresses in the form of firstname, lastname, email, phone, and vehicle type:- \n${formattedValidRiders} So any time there is an order you can contact them and they will deliver the items you are going to provided them. Thanks for working with us.` ;
     const encodedSubject = encodeURIComponent(emailSubject);
     const encodedBody = encodeURIComponent(emailBody);
@@ -101,10 +101,7 @@ const formattedValidRiders = validRiders.map((rider) => `➡️${rider.join(", "
                 <tr key={restaurant._id} className={index % 2 === 0 ? 'bg-teal-100' : 'bg-white'}>
                   <td className="py-2 px-4 border-b">{restaurant.restaurantName}</td>
                   <td className="py-2 px-4 border-b">{restaurant.location}</td>
-                  {/*  <p>
-                <span className="font-bold mb-10">Email :</span> <span className=" hover:text-orange-600 
-                hover:cursor-pointer" onClick={() => handlePartnersContact(partner.email)}>{partner.email}</span>
-              </p> */}
+                 
                   <td className="py-2 px-4 border-b hover:text-orange-600 
                 hover:cursor-pointer" onClick={() => handlePartnersContact(restaurant.email)}>{restaurant.email}</td>
                   <td className="py-2 px-4 border-b">{restaurant.phone}</td>

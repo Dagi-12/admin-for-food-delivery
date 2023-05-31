@@ -79,7 +79,7 @@ export default function FeedBack() {
 
             <p className="mt-4">{feedback.feedback}</p>
             <button
-              className="bg-red-500 text-white py-1 px-3 rounded-md mt-4"
+              className="bg-red-500 text-white py-1 px-3 rounded-md mt-4 hover:bg-red-700"
               onClick={() => deleteFeedback(feedback._id)}
             >
               <FaTrash className="inline-block mr-2" /> Delete
